@@ -18,7 +18,7 @@ info :
 
 spring :
   application :
-    name : quickstart-restful-user-profile-crud
+    name : quickstart-mvc-rest-user-profile-crud
   liquibase :
     change-log : migrations/master.xml
   datasource :

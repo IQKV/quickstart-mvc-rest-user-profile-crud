@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dev.knowhowto</groupId>
-    <artifactId>quickstart-restful-user-profile-crud</artifactId>
+    <artifactId>quickstart-mvc-rest-user-profile-crud</artifactId>
     <version>24.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>quickstart-restful-user-profile-crud</name>
+    <name>quickstart-mvc-rest-user-profile-crud</name>
     <description>Minimal Spring Boot based RESTful CRUD example, which manages user profile entity (including Swagger UI).</description>
     <licenses>
         <license>
@@ -56,7 +56,7 @@
         </dependency>
         <dependency>
             <groupId>org.iqkv.boot</groupId>
-            <artifactId>boot-starter-restful</artifactId>
+            <artifactId>boot-starter-mvc-rest</artifactId>
         </dependency>
         <dependency>
             <groupId>org.iqkv.boot</groupId>

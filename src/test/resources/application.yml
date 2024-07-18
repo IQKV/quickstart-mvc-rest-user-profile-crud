@@ -6,7 +6,7 @@ iqkv :
 
 spring :
   application :
-    name : quickstart-restful-user-profile-crud
+    name : quickstart-mvc-rest-user-profile-crud
   devtools :
     add-properties : false
     restart :
