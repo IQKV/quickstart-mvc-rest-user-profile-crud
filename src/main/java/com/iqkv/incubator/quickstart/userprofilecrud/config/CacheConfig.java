@@ -1,4 +1,4 @@
-package dev.knowhowto.userprofilecrud.config;
+package com.iqkv.incubator.quickstart.userprofilecrud.config;
 
 import java.time.Duration;
 
@@ -45,7 +45,7 @@ class CacheConfig {
   @Bean
   JCacheManagerCustomizer cacheManagerCustomizer() {
     return cm -> {
-      createCache(cm, dev.knowhowto.userprofilecrud.entity.UserProfile.class.getName());
+      createCache(cm, com.iqkv.incubator.quickstart.userprofilecrud.entity.UserProfile.class.getName());
     };
   }
 

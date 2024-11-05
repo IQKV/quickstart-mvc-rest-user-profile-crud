@@ -1,4 +1,4 @@
-package dev.knowhowto.userprofilecrud.config;
+package com.iqkv.incubator.quickstart.userprofilecrud.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories({"dev.knowhowto.userprofilecrud.repository"})
+@EnableJpaRepositories({"com.iqkv.incubator.quickstart.userprofilecrud.repository"})
 @EnableJpaAuditing
 @EnableTransactionManagement
 @OpenAPIDefinition(info = @Info(title = "User Profile Management", version = "24.0.0"))

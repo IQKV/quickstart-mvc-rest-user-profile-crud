@@ -1,4 +1,4 @@
-package dev.knowhowto.userprofilecrud;
+package com.iqkv.incubator.quickstart.userprofilecrud;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
