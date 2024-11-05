@@ -1,4 +1,4 @@
-package dev.knowhowto.userprofilecrud.config;
+package com.iqkv.incubator.quickstart.userprofilecrud.config;
 
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

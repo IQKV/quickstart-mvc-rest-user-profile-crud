@@ -1,12 +1,12 @@
-package dev.knowhowto.userprofilecrud.web;
+package com.iqkv.incubator.quickstart.userprofilecrud.web;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import com.iqkv.boot.web.rest.ApiError;
-import dev.knowhowto.userprofilecrud.entity.UserProfile;
-import dev.knowhowto.userprofilecrud.repository.UserProfileRepository;
+import com.iqkv.incubator.quickstart.userprofilecrud.entity.UserProfile;
+import com.iqkv.incubator.quickstart.userprofilecrud.repository.UserProfileRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

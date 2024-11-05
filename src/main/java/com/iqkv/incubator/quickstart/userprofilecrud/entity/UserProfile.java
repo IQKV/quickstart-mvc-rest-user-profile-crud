@@ -1,4 +1,4 @@
-package dev.knowhowto.userprofilecrud.entity;
+package com.iqkv.incubator.quickstart.userprofilecrud.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
