@@ -1,4 +1,4 @@
-# User Profile CRUD - Sample MvcRest App
+# 🚀 User Profile CRUD - Sample MvcRest App
 
 Minimal Spring Boot based RESTful CRUD example, which manages user profile entity (including Swagger UI).
 
