@@ -1,5 +1,5 @@
 {
-  "name": "@know-how-spring-boot/quickstart-mvc-rest-user-profile-crud",
+  "name": "@iqkv/quickstart-mvc-rest-user-profile-crud",
   "version": "25.0.0",
   "description": "Provide an optional Git commit hooks.",
   "private": true,
