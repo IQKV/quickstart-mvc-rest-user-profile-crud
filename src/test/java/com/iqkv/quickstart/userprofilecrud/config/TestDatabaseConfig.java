@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.userprofilecrud;
+package com.iqkv.quickstart.userprofilecrud.config;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@SpringBootApplication
-public class UserProfileCrudApplication {
-  public static void main(String[] args) {
-    SpringApplication springApplication = new SpringApplication(UserProfileCrudApplication.class);
-    springApplication.setApplicationStartup(new BufferingApplicationStartup(2048));
-    springApplication.run(args);
-  }
+@EnableJpaAuditing
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+public class TestDatabaseConfig {
 }

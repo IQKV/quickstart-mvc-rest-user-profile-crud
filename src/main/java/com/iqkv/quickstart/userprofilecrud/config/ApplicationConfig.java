@@ -14,14 +14,20 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.userprofilecrud.config;
+package com.iqkv.quickstart.userprofilecrud.config;
 
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@Configuration
+@EnableJpaRepositories({"com.iqkv.quickstart.userprofilecrud.repository"})
 @EnableJpaAuditing
-@DataJpaTest
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-public class TestDatabaseConfig {
+@EnableTransactionManagement
+@OpenAPIDefinition(info = @Info(title = "User Profile Management", version = "25.0.0"))
+class ApplicationConfig {
+
 }

@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.userprofilecrud.web;
+package com.iqkv.quickstart.userprofilecrud.web;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.iqkv.boot.mvc.rest.ApiError;
-import com.iqkv.incubator.quickstart.userprofilecrud.entity.UserProfile;
-import com.iqkv.incubator.quickstart.userprofilecrud.repository.UserProfileRepository;
+import expert.uses.boot.mvc.rest.ApiError;
+
+import com.iqkv.quickstart.userprofilecrud.entity.UserProfile;
+import com.iqkv.quickstart.userprofilecrud.repository.UserProfileRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
