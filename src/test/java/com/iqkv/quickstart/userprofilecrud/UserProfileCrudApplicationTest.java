@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.incubator.quickstart.userprofilecrud;
+package com.iqkv.quickstart.userprofilecrud;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
