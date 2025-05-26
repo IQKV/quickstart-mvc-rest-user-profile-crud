@@ -4,13 +4,13 @@ Minimal Spring Boot based RESTful CRUD example, which manages user profile entit
 
 ## Technology stack
 
-java 21, Spring Boot, JPA, Postgres.
+Java 21, Spring Boot, JPA, Postgres.
 
 ## Prerequisites
 
 The following items should be installed in your system:
 
-- java 21 or newer.
+- Java 21 or newer.
 - git command line tool (https://help.github.com/articles/set-up-git)
 - Your preferred IDE (IDEA preferably)
 
@@ -41,7 +41,7 @@ You might also want to use Maven's `spring-boot:run` goal - applications run in 
 
 Now you can access to the Swagger UI here: http://localhost:8080/swagger-ui.html
 
-### Working with Application in your IDE
+### Working with the Application in your IDE
 
 1. On the command line
 
@@ -73,7 +73,7 @@ quality is measured by:
 
 ### Tests
 
-This project contains a JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, etc. You can run the test suite using
+This project contains JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, etc. You can run the test suite using
 
 ```bash
 ./mvnw verify -Puse-qulice
