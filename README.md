@@ -19,25 +19,25 @@ Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. I
 
 ## Quickstart
 
-1) Clone and enter the project
+1. Clone and enter the project
 
 ```bash
 git clone https://github.com/IQKV/quickstart-mvc-rest-user-profile-crud.git
 cd quickstart-mvc-rest-user-profile-crud
 ```
 
-2) Start Postgres (choose one)
+2. Start Postgres (choose one)
 
 - Existing Postgres: set env vars (see Configuration) and ensure DB is reachable
 - Docker: `docker compose -f compose.yaml up -d postgres`
 
-3) Run the app
+3. Run the app
 
 ```bash
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
 ```
 
-4) Explore the API
+4. Explore the API
 
 - Swagger UI: `http://localhost:8080/swagger-ui.html`
 - OpenAPI JSON: `http://localhost:8080/v3/api-docs`
@@ -139,9 +139,9 @@ Note for macOS: remove `network_mode: host` in `compose.yaml` and replace `local
 
 ## Working in your IDE
 
-1) Open the project via `pom.xml`
-2) Activate Spring profile `local` in your Run Configuration (or set `SPRING_PROFILES_ACTIVE=local`)
-3) Run the application; visit Swagger UI at `http://localhost:8080/swagger-ui.html`
+1. Open the project via `pom.xml`
+2. Activate Spring profile `local` in your Run Configuration (or set `SPRING_PROFILES_ACTIVE=local`)
+3. Run the application; visit Swagger UI at `http://localhost:8080/swagger-ui.html`
 
 ## Tests, coverage, and quality
 
