@@ -1,82 +1,174 @@
-# 🚀 User Profile CRUD - Sample MvcRest App
+# 🚀 User Profile CRUD — Sample MvcRest App
 
-Minimal Spring Boot-based RESTful CRUD example, which manages a user profile entity (including Swagger UI).
+Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. Includes OpenAPI/Swagger UI, Liquibase migrations, Actuator, Prometheus metrics, and optional local Docker stack for Postgres, Prometheus, Grafana, and SonarQube.
 
 ## Technology stack
 
-Java 21, Spring Boot, JPA, Postgres.
+- **Language/Runtime**: Java 21
+- **Frameworks**: Spring Boot (Web, Data JPA, Actuator), Springdoc OpenAPI, Undertow
+- **Persistence**: PostgreSQL (Liquibase migrations), H2 for tests
+- **Observability**: Micrometer + Prometheus, Logback (plain/JSON), Grafana dashboards
+- **Quality**: JUnit 5, Mockito, Hamcrest, JaCoCo (80%+), Qulice
 
 ## Prerequisites
 
-The following items should be installed in your system:
+- Java 21+
+- Git
+- Docker (optional, for local infra and monitoring)
+- An IDE (IntelliJ IDEA recommended)
 
-- Java 21 or newer.
-- git command line tool (https://help.github.com/articles/set-up-git)
-- Your preferred IDE (IDEA preferably)
+## Quickstart
 
-## Database configuration
-
-The application uses PostgreSQL as a persistent storage. Options to get it up:
-
-1. Use a remote existing PostgreSQL. It is needed to specify the path in configs.
-1. Start local postgres in docker `docker compose -f compose.yaml up -d`
-
-### Running locally
-
-This application is a [Spring Boot](https://spring.io/guides/gs/spring-boot) application built
-using [Maven](https://spring.io/guides/gs/maven/). You can build a jar file and run it from the command line:
+1) Clone and enter the project
 
 ```bash
 git clone https://github.com/IQKV/quickstart-mvc-rest-user-profile-crud.git
 cd quickstart-mvc-rest-user-profile-crud
-./mvnw package
-java -jar target/*.jar
 ```
 
-You might also want to use Maven's `spring-boot:run` goal - applications run in an exploded form, as they do in your IDE:
+2) Start Postgres (choose one)
+
+- Existing Postgres: set env vars (see Configuration) and ensure DB is reachable
+- Docker: `docker compose -f compose.yaml up -d postgres`
+
+3) Run the app
 
 ```bash
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
 ```
 
-Now you can access to the Swagger UI here: http://localhost:8080/swagger-ui.html
+4) Explore the API
 
-### Working with the Application in your IDE
+- Swagger UI: `http://localhost:8080/swagger-ui.html`
+- OpenAPI JSON: `http://localhost:8080/v3/api-docs`
+- Actuator Health: `http://localhost:8080/actuator/health`
+- Prometheus metrics: `http://localhost:8080/actuator/prometheus`
 
-1. On the command line
+To build a runnable jar:
 
 ```bash
-git clone https://github.com/IQKV/quickstart-mvc-rest-user-profile-crud.git
+./mvnw package
+java -jar target/*.jar
 ```
 
-2. Inside IDE
+## Configuration
 
-In the main menu, choose `File -> Open` and select the Application [pom.xml](pom.xml). Click on the `Open` button.
-Activate "local" profile in the Run settings or set it via environment
-variables. [instruction](https://stackoverflow.com/questions/38520638/how-to-set-spring-profile-from-system-variable)
-Wait for indexing completion and push the green "play" button.
+Key application properties (defaults in `src/main/resources/application.yml`):
 
-3. Navigate to Swagger UI
+- **Server**: `SERVER_PORT` (default 8080)
+- **Datasource**:
+  - `DATASOURCE_URL` (default `jdbc:postgresql://localhost:5432/svc_testing_db`)
+  - `DATASOURCE_USERNAME` (default `postgres`)
+  - `DATASOURCE_PASSWORD` (default `postgres`)
+  - `DATASOURCE_DRIVER` (default `org.postgresql.Driver`)
+- **Management**: `MANAGEMENT_SERVER_PORT` (default 8080)
 
-Visit [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html) in your browser.
+Local developer-friendly settings are enabled via the `local` Spring profile (`application-local.yml`): SQL logged, caches off, actuator endpoints exposed.
 
-## Code conventions
+## API Endpoints
 
-The code adheres to the [Google Code Conventions](https://google.github.io/styleguide/javaguide.html). Code
-quality is measured by:
+Base path: `http://localhost:8080/api/v1/user-profiles`
 
-- [SonarQube](https://docs.sonarsource.com/)
-- [PMD](https://pmd.github.io/)
-- [CheckStyle](https://checkstyle.sourceforge.io/)
-- [SpotBugs](https://spotbugs.github.io/)
-- [Qulice](https://www.qulice.com/)
+- Create
 
-### Tests
+```bash
+curl -sS -X POST http://localhost:8080/api/v1/user-profiles \
+  -H "Content-Type: application/json" \
+  -d '{"email":"john.doe@example.com","active":true}'
+```
 
-This project contains JUnit tests, Hamcrest matchers, Mockito test doubles, Wiremock stubs, etc. You can run the test suite using
+- Get by id
+
+```bash
+curl -sS http://localhost:8080/api/v1/user-profiles/1
+```
+
+- List (optional filter by `email`)
+
+```bash
+curl -sS "http://localhost:8080/api/v1/user-profiles?email=john"
+```
+
+- Update
+
+```bash
+curl -sS -X PUT http://localhost:8080/api/v1/user-profiles/1 \
+  -H "Content-Type: application/json" \
+  -d '{"email":"johnny@example.com","active":false}'
+```
+
+- Delete by id
+
+```bash
+curl -sS -X DELETE http://localhost:8080/api/v1/user-profiles/1
+```
+
+- Delete all
+
+```bash
+curl -sS -X DELETE http://localhost:8080/api/v1/user-profiles
+```
+
+- List active
+
+```bash
+curl -sS http://localhost:8080/api/v1/user-profiles/active
+```
+
+## Running with Docker extras (Monitoring & Quality)
+
+`compose.yaml` includes optional services for local development:
+
+- **postgres**: Postgres 16 (exposes 5432)
+- **prometheus**: scrapes app metrics; uses host network for easy local testing
+- **grafana**: pre-provisioned dashboards; default admin password `changeme`
+- **sonar**: SonarQube Community (ports 9000/9001 bound to localhost)
+
+Start all:
+
+```bash
+docker compose up -d
+```
+
+Services:
+
+- Prometheus config: `src/main/docker/prometheus/prometheus.yml`
+- Grafana provisioning: `src/main/docker/grafana/provisioning/`
+
+Note for macOS: remove `network_mode: host` in `compose.yaml` and replace `localhost` with `host.docker.internal` in Prometheus and Grafana datasources as hinted in comments.
+
+## Working in your IDE
+
+1) Open the project via `pom.xml`
+2) Activate Spring profile `local` in your Run Configuration (or set `SPRING_PROFILES_ACTIVE=local`)
+3) Run the application; visit Swagger UI at `http://localhost:8080/swagger-ui.html`
+
+## Tests, coverage, and quality
+
+- Run unit tests with coverage and style checks:
 
 ```bash
 ./mvnw verify -Puse-qulice
 ```
 
-The minimum percentage of code coverage required for the workflow to pass is **80%**.
+JaCoCo rules require at least 80% coverage overall and per-class thresholds (see `pom.xml`). You may also use the `use-testcontainers` profile to leverage ephemeral Postgres in tests:
+
+```bash
+./mvnw test -Puse-testcontainers
+```
+
+## Code conventions
+
+The code follows the [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) and is checked by:
+
+- SonarQube, PMD, Checkstyle, SpotBugs, Qulice
+
+## Troubleshooting
+
+- Cannot connect to DB: verify Postgres is running and `DATASOURCE_*` env vars match the instance
+- Port conflicts: change `SERVER_PORT` or stop conflicting services
+- macOS networking with Docker monitoring: see the note above regarding `network_mode: host`
+
+## License
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE).
