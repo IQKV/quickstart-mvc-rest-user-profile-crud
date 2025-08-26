@@ -21,7 +21,7 @@ Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. I
 
 1. Clone and enter the project
 
-```bash
+```shell script
 git clone https://github.com/IQKV/quickstart-mvc-rest-user-profile-crud.git
 cd quickstart-mvc-rest-user-profile-crud
 ```
@@ -33,7 +33,7 @@ cd quickstart-mvc-rest-user-profile-crud
 
 3. Run the app
 
-```bash
+```shell script
 ./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
 ```
 
@@ -46,7 +46,7 @@ cd quickstart-mvc-rest-user-profile-crud
 
 To build a runnable jar:
 
-```bash
+```shell script
 ./mvnw package
 java -jar target/*.jar
 ```
@@ -71,7 +71,7 @@ Base path: `http://localhost:8080/api/v1/user-profiles`
 
 - Create
 
-```bash
+```shell script
 curl -sS -X POST http://localhost:8080/api/v1/user-profiles \
   -H "Content-Type: application/json" \
   -d '{"email":"john.doe@example.com","active":true}'
@@ -79,19 +79,19 @@ curl -sS -X POST http://localhost:8080/api/v1/user-profiles \
 
 - Get by id
 
-```bash
+```shell script
 curl -sS http://localhost:8080/api/v1/user-profiles/1
 ```
 
 - List (optional filter by `email`)
 
-```bash
+```shell script
 curl -sS "http://localhost:8080/api/v1/user-profiles?email=john"
 ```
 
 - Update
 
-```bash
+```shell script
 curl -sS -X PUT http://localhost:8080/api/v1/user-profiles/1 \
   -H "Content-Type: application/json" \
   -d '{"email":"johnny@example.com","active":false}'
@@ -99,19 +99,19 @@ curl -sS -X PUT http://localhost:8080/api/v1/user-profiles/1 \
 
 - Delete by id
 
-```bash
+```shell script
 curl -sS -X DELETE http://localhost:8080/api/v1/user-profiles/1
 ```
 
 - Delete all
 
-```bash
+```shell script
 curl -sS -X DELETE http://localhost:8080/api/v1/user-profiles
 ```
 
 - List active
 
-```bash
+```shell script
 curl -sS http://localhost:8080/api/v1/user-profiles/active
 ```
 
@@ -126,7 +126,7 @@ curl -sS http://localhost:8080/api/v1/user-profiles/active
 
 Start all:
 
-```bash
+```shell script
 docker compose up -d
 ```
 
@@ -147,13 +147,13 @@ Note for macOS: remove `network_mode: host` in `compose.yaml` and replace `local
 
 - Run unit tests with coverage and style checks:
 
-```bash
+```shell script
 ./mvnw verify -Puse-qulice
 ```
 
 JaCoCo rules require at least 80% coverage overall and per-class thresholds (see `pom.xml`). You may also use the `use-testcontainers` profile to leverage ephemeral Postgres in tests:
 
-```bash
+```shell script
 ./mvnw test -Puse-testcontainers
 ```
 
