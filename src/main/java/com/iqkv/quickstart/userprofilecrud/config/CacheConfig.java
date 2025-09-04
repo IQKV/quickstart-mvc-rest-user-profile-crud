@@ -18,7 +18,7 @@ package com.iqkv.quickstart.userprofilecrud.config;
 
 import java.time.Duration;
 
-import com.iqkv.boot.cache.CacheProperties;
+import com.github.dimdnk.boot.cache.CacheProperties;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;

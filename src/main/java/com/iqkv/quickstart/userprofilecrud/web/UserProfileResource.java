@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.iqkv.boot.mvc.rest.ApiError;
+import com.github.dimdnk.boot.mvc.rest.ApiError;
 import com.iqkv.quickstart.userprofilecrud.entity.UserProfile;
 import com.iqkv.quickstart.userprofilecrud.repository.UserProfileRepository;
 import io.swagger.v3.oas.annotations.Operation;
