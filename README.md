@@ -22,7 +22,7 @@ Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. I
 1. Clone and enter the project
 
 ```shell script
-git clone https://github.com/IQKV/quickstart-mvc-rest-user-profile-crud.git
+git clone https://github.com/dimdnk/quickstart-mvc-rest-user-profile-crud.git
 cd quickstart-mvc-rest-user-profile-crud
 ```
 
