@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.userprofilecrud.config;
+package com.github.dimdnk.quickstart.userprofilecrud.config;
 
 import java.time.Duration;
 
@@ -61,7 +61,7 @@ class CacheConfig {
   @Bean
   JCacheManagerCustomizer cacheManagerCustomizer() {
     return cm -> {
-      createCache(cm, com.iqkv.quickstart.userprofilecrud.entity.UserProfile.class.getName());
+      createCache(cm, com.github.dimdnk.quickstart.userprofilecrud.entity.UserProfile.class.getName());
     };
   }
 

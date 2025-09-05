@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 IQKV Foundation Team.
+ * Copyright 2025 KnowHowToDev Team.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.iqkv.quickstart.userprofilecrud.web;
+package com.github.dimdnk.quickstart.userprofilecrud.web;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import com.github.dimdnk.boot.mvc.rest.ApiError;
-import com.iqkv.quickstart.userprofilecrud.entity.UserProfile;
-import com.iqkv.quickstart.userprofilecrud.repository.UserProfileRepository;
+import com.github.dimdnk.quickstart.userprofilecrud.entity.UserProfile;
+import com.github.dimdnk.quickstart.userprofilecrud.repository.UserProfileRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
