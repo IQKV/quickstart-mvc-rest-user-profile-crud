@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud.entity;
+package com.iqkv.quickstart.userprofilecrud.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

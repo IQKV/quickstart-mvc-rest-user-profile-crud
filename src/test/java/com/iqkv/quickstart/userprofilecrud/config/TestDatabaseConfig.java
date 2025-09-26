@@ -14,21 +14,14 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud;
+package com.iqkv.quickstart.userprofilecrud.config;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@SpringBootTest
-class UserProfileCrudApplicationTest {
-
-  @Test
-  void contextLoad() {
-    Assertions.assertDoesNotThrow(this::doNotThrowException);
-  }
-
-  private void doNotThrowException() {
-    // This method will never throw exception
-  }
+@EnableJpaAuditing
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+public class TestDatabaseConfig {
 }

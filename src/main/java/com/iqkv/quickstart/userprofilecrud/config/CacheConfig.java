@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud.config;
+package com.iqkv.quickstart.userprofilecrud.config;
 
 import java.time.Duration;
 
-import com.github.dimdnk.boot.cache.CacheProperties;
+import com.iqkv.boot.cache.CacheProperties;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ExpiryPolicyBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
@@ -61,7 +61,7 @@ class CacheConfig {
   @Bean
   JCacheManagerCustomizer cacheManagerCustomizer() {
     return cm -> {
-      createCache(cm, com.github.dimdnk.quickstart.userprofilecrud.entity.UserProfile.class.getName());
+      createCache(cm, com.iqkv.quickstart.userprofilecrud.entity.UserProfile.class.getName());
     };
   }
 

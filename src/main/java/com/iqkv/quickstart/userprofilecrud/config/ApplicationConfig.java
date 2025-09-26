@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud.config;
+package com.iqkv.quickstart.userprofilecrud.config;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
@@ -24,7 +24,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories({"com.github.dimdnk.quickstart.userprofilecrud.repository"})
+@EnableJpaRepositories({"com.iqkv.quickstart.userprofilecrud.repository"})
 @EnableJpaAuditing
 @EnableTransactionManagement
 @OpenAPIDefinition(info = @Info(title = "User Profile Management", version = "25.0.0"))

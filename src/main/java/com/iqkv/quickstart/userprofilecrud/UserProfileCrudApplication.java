@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud;
+package com.iqkv.quickstart.userprofilecrud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

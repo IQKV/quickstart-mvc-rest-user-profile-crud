@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.dimdnk.quickstart.userprofilecrud.web;
+package com.iqkv.quickstart.userprofilecrud.web;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
@@ -34,8 +34,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.github.dimdnk.quickstart.userprofilecrud.entity.UserProfile;
-import com.github.dimdnk.quickstart.userprofilecrud.repository.UserProfileRepository;
+import com.iqkv.quickstart.userprofilecrud.entity.UserProfile;
+import com.iqkv.quickstart.userprofilecrud.repository.UserProfileRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;

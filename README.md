@@ -4,7 +4,7 @@ Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. I
 
 ## Technology stack
 
-- **Language/Runtime**: Java 21
+- **Language/Runtime**: Java 25
 - **Frameworks**: Spring Boot (Web, Data JPA, Actuator), Springdoc OpenAPI, Undertow
 - **Persistence**: PostgreSQL (Liquibase migrations), H2 for tests
 - **Observability**: Micrometer + Prometheus, Logback (plain/JSON), Grafana dashboards
@@ -12,7 +12,7 @@ Minimal Spring Boot-based RESTful CRUD service managing a user profile entity. I
 
 ## Prerequisites
 
-- Java 21+
+- Java 25+
 - Git
 - Docker (optional, for local infra and monitoring)
 - An IDE (IntelliJ IDEA recommended)
