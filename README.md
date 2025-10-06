@@ -132,8 +132,8 @@ docker compose up -d
 
 Services:
 
-- Prometheus config: `src/main/docker/prometheus/prometheus.yml`
-- Grafana provisioning: `src/main/docker/grafana/provisioning/`
+- Prometheus config: `docker/prometheus/prometheus.yml`
+- Grafana provisioning: `docker/grafana/provisioning/`
 
 Note for macOS: remove `network_mode: host` in `compose.yaml` and replace `localhost` with `host.docker.internal` in Prometheus and Grafana datasources as hinted in comments.
 
