@@ -56,7 +56,7 @@ class UserProfileResourceTest {
   private final ObjectMapper objectMapper;
 
   @Autowired
-  public UserProfileResourceTest(MockMvc mockMvc, ObjectMapper objectMapper) {
+  public UserProfileResourceTest(final MockMvc mockMvc, final ObjectMapper objectMapper) {
     this.mockMvc = mockMvc;
     this.objectMapper = objectMapper;
   }

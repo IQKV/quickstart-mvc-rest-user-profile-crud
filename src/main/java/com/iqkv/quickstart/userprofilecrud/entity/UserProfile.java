@@ -61,7 +61,7 @@ public class UserProfile {
 
   private boolean active;
 
-  public UserProfile(String email, boolean active) {
+  public UserProfile(final String email, final boolean active) {
     this.email = email;
     this.active = active;
   }
