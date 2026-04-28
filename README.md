@@ -34,7 +34,7 @@ cd quickstart-mvc-rest-user-profile-crud
 3. Run the app
 
 ```shell script
-./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P dev
+./mvnw spring-boot:run -Dspring-boot.run.profiles=local -P local
 ```
 
 4. Explore the API
